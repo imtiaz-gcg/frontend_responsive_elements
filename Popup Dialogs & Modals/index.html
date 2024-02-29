@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Popup Dialogs & Modals</title>
+
+    <style>
+      dialog {
+        padding: 0;
+      }
+
+      dialog .wrapper {
+        padding: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="showLoginDialog()">Login</button>
+    <dialog id="login-dialog">
+      <div class="wrapper">
+        <h2>Login</h2>
+        <form>
+          <input type="email" />
+          <input type="password" />
+          <button>Login</button>
+          <button type="button" onclick="closeLoginDialog()">Cancel</button>
+        </form>
+      </div>
+    </dialog>
+
+    <script>
+      const dialog = document.getElementById("login-dialog");
+      const wrapper = document.querySelector(".wrapper");
+
+      function showLoginDialog() {
+        dialog.showModal();
+      }
+
+      function closeLoginDialog() {
+        dialog.close();
+      }
+
+      dialog.addEventListener("click", (e) => {
+        if (!wrapper.contains(e.target)) {
+          dialog.close();
+        }
+      });
+    </script>
+  </body>
+</html>
