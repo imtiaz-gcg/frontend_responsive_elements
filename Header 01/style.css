@@ -1,0 +1,56 @@
+:root {
+  --purple: #693ab8;
+  --yellow: #faa825;
+  --dark: #1d1e24;
+}
+
+.side {
+  height: 100vh;
+  width: 100%;
+
+  display: grid;
+  place-items: center;
+
+  overflow: hidden;
+  position: absolute;
+}
+
+.side .title {
+  color: white;
+  font-family: "Rubik", sans-serif;
+  font-size: 8vw;
+  margin: 0px 15vw;
+  width: 70vw;
+}
+
+#left-side {
+  background-color: var(--purple);
+  z-index: 2;
+}
+
+#right-side {
+  background-color: var(--yellow);
+}
+
+.side .fancy {
+  font-family: "Lobster", cursive;
+  font-size: 1.3em;
+  line-height: 0.8em;
+}
+
+#left-side .title {
+  color: white;
+}
+
+#left-side .fancy {
+  color: var(--yellow);
+}
+
+#right-side .title {
+  /* color: var(--dark); */
+  color: white;
+}
+
+#right-side .fancy {
+  color: var(--purple);
+}
